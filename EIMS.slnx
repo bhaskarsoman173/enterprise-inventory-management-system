@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/EIMS.API/EIMS.API.csproj" Id="8c101dea-fcb7-4397-8471-d1278c32a066" />
+  <Project Path="src/EIMS.Application/EIMS.Application.csproj" Id="60222cf1-3c45-4ade-9da9-dea4a4ed0cd3" />
+  <Project Path="src/EIMS.Domain/EIMS.Domain.csproj" Id="07449584-ee63-431d-bcd1-f317e60f8a8f" />
+  <Project Path="src/EIMS.Infrastructure/EIMS.Infrastructure.csproj" Id="7608abe5-ccb0-4d20-a2bb-32c2ef2e7db4" />
+</Solution>
