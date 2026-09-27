@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EIMS.Infrastructure.Configurations;
+namespace EIMS.Infrastructure.Persistence.Configurations;
 
 internal class ProductConfiguration : IEntityTypeConfiguration<Product>
 {

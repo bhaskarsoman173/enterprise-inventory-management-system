@@ -1,5 +1,5 @@
 ﻿using EIMS.Domain.Products;
-using EIMS.Infrastructure.Configurations;
+using EIMS.Infrastructure.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace EIMS.Infrastructure.Persistence;
