@@ -1,7 +1,6 @@
 ﻿using EIMS.Application.Exceptions;
 using EIMS.Application.Products.Repositories;
 using EIMS.Domain.Products;
-using System.Data;
 
 namespace EIMS.Application.Products.Commands.CreateProduct;
 
