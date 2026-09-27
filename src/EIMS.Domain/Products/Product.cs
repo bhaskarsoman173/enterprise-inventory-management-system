@@ -11,6 +11,23 @@ public class Product
     public DateTimeOffset CreatedAt { get; private set; }
     public DateTimeOffset? UpdatedAt { get; private set; }
 
+    // Used to reconstitute an existing Product.
+    private Product(
+        Guid id,
+        string name,
+        string? description,
+        ProductStatus status,
+        DateTimeOffset createdAt,
+        DateTimeOffset? updatedAt)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+        Status = status;
+        CreatedAt = createdAt;
+        UpdatedAt = updatedAt;
+    }
+
     private Product(string name,  string? description = null)
     {
         if (string.IsNullOrWhiteSpace(name))
@@ -32,5 +49,3 @@ public class Product
         return new Product (name, description);
     }
 }
-
-
