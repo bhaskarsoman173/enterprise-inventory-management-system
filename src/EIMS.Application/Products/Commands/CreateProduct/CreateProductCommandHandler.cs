@@ -1,10 +1,11 @@
-﻿using EIMS.Application.Exceptions;
+﻿using EIMS.Application.Abstractions.Persistence;
+using EIMS.Application.Exceptions;
 using EIMS.Application.Products.Repositories;
 using EIMS.Domain.Products;
 
 namespace EIMS.Application.Products.Commands.CreateProduct;
 
-public class CreateProductCommandHandler(IProductRepository productRepository)
+public class CreateProductCommandHandler(IProductRepository productRepository, IUnitOfWork unitOfWork)
 {
     public async Task<CreateProductResponse> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
@@ -18,6 +19,8 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
         var product = Product.Create(command.Name, command.Description);
 
         await productRepository.AddAsync(product, cancellationToken);
+
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return new CreateProductResponse(product.Id);
     }

@@ -1,3 +1,3 @@
 ﻿namespace EIMS.Application.Products.Commands.CreateProduct;
 
-public record struct CreateProductResponse(Guid Guid);
+public sealed record CreateProductResponse(Guid Id);

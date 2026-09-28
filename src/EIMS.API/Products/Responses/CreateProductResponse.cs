@@ -1,5 +1,5 @@
 ﻿namespace EIMS.API.Products.Responses;
 
-public class CreateProductResponse
+public class CreateProductResponse(Guid Id)
 {
 }
