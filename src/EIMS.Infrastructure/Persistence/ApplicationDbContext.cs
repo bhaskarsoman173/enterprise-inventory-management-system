@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EIMS.Infrastructure.Persistence;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {
     public DbSet<Product> Products => Set<Product>();
 

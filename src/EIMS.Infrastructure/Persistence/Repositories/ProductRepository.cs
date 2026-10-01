@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EIMS.Infrastructure.Persistence.Repositories;
 
-public sealed class ProductRepository(ApplicationDbContext dbContext) : IProductRepository
+internal sealed class ProductRepository(ApplicationDbContext dbContext) : IProductRepository
 {
     public async Task AddAsync(Product product, CancellationToken cancellationToken)
     {

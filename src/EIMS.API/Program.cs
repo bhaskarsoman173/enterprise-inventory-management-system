@@ -1,20 +1,14 @@
-﻿using EIMS.Application.Abstractions.Persistence;
-using EIMS.Application.Products.Commands.CreateProduct;
-using EIMS.Application.Products.Repositories;
-using EIMS.Infrastructure.Persistence;
-using EIMS.Infrastructure.Persistence.Repositories;
-using EIMS.Infrastructure.Persistence.UnitOfWork;
+﻿using EIMS.Application.DependencyInjection;
+using EIMS.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Register services here.
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<CreateProductCommandHandler>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddApplication();
 
-builder.Services.AddDbContext<ApplicationDbContext>();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

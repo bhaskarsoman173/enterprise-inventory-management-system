@@ -2,7 +2,7 @@
 
 namespace EIMS.Infrastructure.Persistence.UnitOfWork;
 
-public sealed class UnitOfWork(ApplicationDbContext dbContext) : IUnitOfWork
+internal sealed class UnitOfWork(ApplicationDbContext dbContext) : IUnitOfWork
 {
     public async Task SaveChangesAsync(CancellationToken cancellationToken)
     {
