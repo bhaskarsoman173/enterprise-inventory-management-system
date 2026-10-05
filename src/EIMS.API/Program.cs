@@ -1,4 +1,5 @@
-﻿using EIMS.Application.DependencyInjection;
+﻿using EIMS.API.ExceptionHandling;
+using EIMS.Application.DependencyInjection;
 using EIMS.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 
+builder.Services.AddExceptionHandler<ApiExceptionHandler>();
 
 var app = builder.Build();
 
